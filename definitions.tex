@@ -1,0 +1,204 @@
+
+\newcommand{\reviewlanguage}{EN}
+\newcommand{\reporttype}{SUP} % Default type, can be: supervisor, reviewer
+
+% Language-dependent strings
+\newcommand{\TR}[2]{%
+  \IfStrEqCase{\reviewlanguage}{%
+    {EN}{#1}%
+    {CZ}{#2}%
+  }%
+}
+
+\newcommand{\RC}[2]{%
+  \IfStrEqCase{\reporttype}{%
+    {SUP}{#1}%
+    {REV}{#2}%
+  }%
+}
+
+
+\newcommand{\LanguageLogo}[1]{%
+    \IfStrEqCase{\reviewlanguage}{%
+        {EN}{\includegraphics[#1]{ctu_logo.pdf}}%
+        {CZ}{\includegraphics[#1]{ctu_logo_cz.pdf}}%
+    }
+}
+
+\newcommand{\Identification}{\TR{Identification data}{Identifikační údaje}}
+\newcommand{\Evaluation}{\TR{Evaluation}{Hodnocení}}
+\newcommand{\Comments}{\TR{Additional comments}{Další komentáře}}
+% \newcommand{\}
+
+\newcommand{\ReportTitle}{\TR{\RC{THESIS SUPERVISOR'S REPORT}{THESIS REVIEWER'S REPORT}}{\RC{POSUDEK VEDOUCÍHO PRÁCE}{POSUDEK OPONENTA PRÁCE}}}
+\newcommand{\ThesisTitle}{\TR{Thesis title:}{Název práce:}}
+\newcommand{\AuthorName}{\TR{Author:}{Autor:}}
+\newcommand{\ThesisType}{\TR{Type of thesis:}{Typ práce:}}
+\newcommand{\Faculty}{\TR{Faculty:}{Fakulta:}}
+\newcommand{\Department}{\TR{Department:}{Katedra:}}
+\newcommand{\ThesisReviewer}{\TR{Thesis reviewer:}{\RC{Vedoucí práce:}{Oponent práce:}}}
+\newcommand{\ReviewerDept}{\TR{Reviewer's department:}{\RC{Pracoviště vedoucího:}{Pracoviště oponenta:}}}
+\newcommand{\Overall}{\TR{Overall evaluation and questions}{Celkové hodnocení a otázky}}
+\newcommand{\GradeText}{\TR{The grade that I award for the thesis is}{Předloženou závěrečnou práci hodnotím klasifikačním stupněm}}
+\newcommand{\ReviewDate}{\TR{Date:}{Datum:}}
+\newcommand{\ReviewSignature}{\TR{Signature:}{Podpis:}}
+\newcommand{\Assignment}{\TR{Assignment}{Zadání}}
+\newcommand{\Fullfilment}{\TR{Fullfilment of assignment}{Splnění zadání}}
+\newcommand{\Activity}{\TR{Activity and independence}{Aktivita a samostatnost}}
+\newcommand{\Methodology}{\TR{Methodology}{Zvolený postup řešení}}
+\newcommand{\Technical}{\TR{Technical level}{Odborná úroveň}}
+\newcommand{\Formal}{\TR{Formal and language level, scope}{Formální a jazyková úroveň, rozsah}}
+\newcommand{\Sources}{\TR{Sources and references}{Zdroje a literatura}}
+
+% Custom commands for consistent spacing
+\newcommand{\spacedrow}[1]{\\\rule{0pt}{4ex}#1}
+
+\newcommand{\assgrade}[1]{%
+\textbf{
+    \IfStrEqCase{#1}{%
+        {A}{\TR{Extraordinarily challenging}{Mimořádně náročné}}%
+        {B}{\TR{Challenging}{Náročné}}%
+        {C}{\TR{Ordinarily challenging}{Průměrně náročné}}%
+        {D}{\TR{Easy}{Lehčí}}%
+        {E}{\TR{Unsatisfactorily challenging}{Nedostatečně náročné}}%
+    }[{\TR{Invalid Grade}{Neplatná známka}}]%
+}
+}
+
+\newcommand{\fullfilgrade}[1]{%
+\textbf{
+    \IfStrEqCase{#1}{%
+        {A}{\TR{Fulfilled}{Splněno}}%
+        {B}{\TR{Fulfilled with minor objections}{Splněno s menšími výhradami}}%
+        {C}{\TR{Fulfilled with major objections}{Splněno s většími výhradami}}%
+        {D}{\TR{Unfulfilled}{Nesplněno}}%
+    }[{\TR{Invalid Grade}{Neplatná známka}}]%
+}
+}
+
+
+
+\newcommand{\methodologygrade}[1]{
+  \textbf{
+    \IfStrEqCase{#1}{%
+        {A}{\TR{Outstanding}{Vynikající}}%
+        {B}{\TR{Correct}{Správný}}%
+        {C}{\TR{Partially applicable}{Částečně vhodný}}%
+        {D}{\TR{Incorrect}{Nesprávný}}% 
+    }[{\TR{Invalid Grade}{Neplatná známka}}]%
+  }
+}
+
+
+
+\newcommand{\generalgrade}[1]{%
+\textbf{
+    \IfStrEqCase{#1}{%
+        {A}{\TR{A - Excellent}{A - Výborně}}%
+        {B}{\TR{B - Very good}{B - Velmi dobře}}%
+        {C}{\TR{C - Good}{C - Dobře}}%
+        {D}{\TR{D - Satisfactory}{D - Uspokojivě}}%
+        {E}{\TR{E - Sufficient}{E - Dostatčně}}%
+        {F}{\TR{F - Failed}{F - Nedostatečně}}%
+    }[{\TR{Invalid Grade}{Neplatná známka}}]%
+}
+}
+
+\newcommand{\thesis}[1]{%
+    \IfStrEqCase{#1}{%
+        {B}{\TR{Bachelor}{Bakalářská}}%
+        {M}{\TR{Master}{Diplomová}}%
+        {D}{\TR{Doctoral}{Doktorská}}%
+    }[{\TR{Invalid Thesis Type}{Neplatný typ práce}}]%
+}
+
+
+\newcommand{\faculty}[1]{%
+  \IfStrEqCase{#1} {%
+    {FSV}{\TR{Faculty of Civil Engineering (FCE)}{Fakulta stavební (FSv)}}%
+    {FS}{\TR{Faculty of Mechanical Engineering (FME)}{Fakulta strojní (FS)}}%
+    {FEL}{\TR{Faculty of Electrical Engineering (FEE)}{Fakulta elektrotechnická (FEL)}}%
+    {FJFI}{\TR{Faculty of Nuclear Sciences and Physical Engineering (FNSPE)}{Fakulta jaderná a fyzikálně inženýrská (FJFI)}}%
+    {FA}{\TR{Faculty of Architecture (FA)}{Fakulta architektury (FA)}}%
+    {FD}{\TR{Faculty of Transportation Sciences (FTS)}{Fakulta dopravní (FD)}}%
+    {FBMI}{\TR{Faculty of Biomedical Engineering (FBE)}{Fakulta biomedicínského inženýrství (FBMI)}}%
+    {FIT}{\TR{Faculty of Information Technology (FIT)}{Fakulta informačních technologií(FIT)}}%
+    {MUVS}{\TR{Masaryk Institute of Advanced Studies (MIAS)}{Masarykův ústav vyšších studií (MÚVS)}}%
+  }[{\TR{Invalid faculty}{Neexistující Fakulta}}]%
+}
+ 
+\newcommand{\ActGrade}[1]{%
+\IfStrEqCase{\reporttype}{%
+  {SUP}{\generalgrade{#1}}%
+  {REV}{\methodologygrade{#1}}%
+}%
+}
+
+\renewcommand{\thesection}{\Roman{section}}
+
+\pagestyle{fancy}
+\fancyhf{} % Clear default headers/footers
+% \fancyhead[L]{\Logo}
+\fancyhead[L]{\LanguageLogo{height=2.6cm}}
+\fancyhead[R]{\large\textbf{\ReportTitle}}
+\renewcommand{\headrulewidth}{0.4pt} % Add a line under the header
+
+\newcommand{\IdentificationDetail}[7]{
+\begin{tabular}{p{6cm} p{10cm}}
+  \toprule
+  \textbf{\ThesisTitle} & {#1} \\[1ex]
+  \textbf{\AuthorName} & {#2} \\[1ex]
+  \textbf{\ThesisType} & \thesis{#3} \\[1ex]
+  \textbf{\Faculty} & \faculty{#4} \\[1ex]
+  \textbf{\Department} & {#5} \\[1ex]
+  \textbf{\ThesisReviewer} & {#6} \\[1ex]
+  \textbf{\ReviewerDept} & {#7} \\
+  \bottomrule
+  \end{tabular}
+}
+
+\newcommand{\DefaultEvalTable}[4]{
+\begin{tabular}{p{8cm} p{8cm}}
+  \toprule
+  \textbf{#1} & \textbf{#2{#3}} \\
+  \midrule
+  \multicolumn{2}{p{16cm}}{ 
+    #4
+  } \\[4ex]
+  \bottomrule
+\end{tabular}
+}
+
+\newcommand{\AssignmentTable}[2] {
+  \DefaultEvalTable{\Assignment}{\assgrade}{#1}{#2}
+}
+
+\newcommand{\FullfilmentTable}[2] {
+  \DefaultEvalTable{\Fullfilment}{\fullfilgrade}{#1}{#2}
+}
+
+\newcommand{\ActivityMethodologyTable}[2] {
+  \DefaultEvalTable{\RC{\Activity}{\Methodology}}{\ActGrade}{#1}{#2}
+}
+
+\newcommand{\TechnicalTable}[2]{
+  \DefaultEvalTable{\Technical}{\generalgrade}{#1}{#2}
+}
+
+\newcommand{\FormalTable}[2]{
+  \DefaultEvalTable{\Formal}{\generalgrade}{#1}{#2}
+}
+
+\newcommand{\SourcesTable}[2]{
+  \DefaultEvalTable{\Sources}{\generalgrade}{#1}{#2}
+}
+
+\newcommand{\AdditionalCommentsTable}[1]{
+\begin{tabular}{p{16.4cm}}
+  \toprule
+  \textbf{\Comments} \\
+  \midrule
+  #1 \\
+  \bottomrule
+\end{tabular}
+}

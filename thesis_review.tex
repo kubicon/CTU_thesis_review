@@ -1,0 +1,111 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{xstring} % For string comparison
+\usepackage{fancyhdr} % For custom headers
+\usepackage{lastpage} % For page numbering
+
+% Language support
+\usepackage[english,czech]{babel} % Add more languages as needed
+% Page margins
+
+\geometry{
+    top=4.5cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm,
+    headheight=2.5cm
+}
+\input{definitions.tex}
+\begin{document}
+
+\renewcommand{\reviewlanguage}{CZ} % EN or CZ
+\renewcommand{\reporttype}{SUP} % SUP or REV
+% \renewcommand{\language}{EN}
+% \renewcommand{\reporttype}{REV}
+
+\section{\protect\Identification}
+% Document Information Table
+\begin{center}
+  \IdentificationDetail
+    {} % Thesis Title
+    {} % Author Name
+    {} % Thesis Type, either B, M or D
+    {} % Faculty, choose from FSV, FS, FEL, FJFI, FA, FD, FBMI, FIT, MUVS
+    {} % Department of student
+    {} % Reviewer Name
+    {} % Department of reviewer
+  
+\end{center}
+
+
+% Evaluation Section
+\section{\protect\Evaluation} 
+\begin{center}
+
+% These tables work in a way that first value is a grade and second is the additional commentary
+
+% How demanding was the assigned project? Grade is A-E.
+\AssignmentTable{}{
+  \textit{How demanding was the assigned project? Grade is A-E.}
+}
+\vspace{0.5cm}
+
+% How well does the thesis fulfil the assigned task? Have the primary goals been achieved? Which assigned tasks have been incompletely covered, and which parts of the thesis are overextended? Justify your answer. Grade is A-D.
+\FullfilmentTable{}{
+  \textit{How well does the thesis fulfil the assigned task? Have the primary goals been achieved? Which assigned tasks have been incompletely covered, and which parts of the thesis are overextended? Justify your answer. Grade is A-D.}
+}
+\vspace{0.5cm}
+ 
+% REVIEWER:
+% Comment on the correctness of the approach and/or the solution methods. Grade is A-D.
+% SUPERVISOR:
+% Assess whether the student had a positive approach, whether the time limits were met, whether the conception was regularly consulted and whether the student was well prepared for the consultations. Assess the student’s ability to work independently. Grade is A-F.
+\ActivityMethodologyTable{}{
+  \textit{\RC{Assess whether the student had a positive approach, whether the time limits were met, whether the conception was regularly consulted and whether the student was well prepared for the consultations. Assess the student’s ability to work independently. Grade is A-F.}{Comment on the correctness of the approach and/or the solution methods. Grade is A-D.}}
+}
+\vspace{0.5cm}
+
+% Is the thesis technically sound? How well did the student employ expertise in his/her field of study? Does the student explain clearly what he/she has done? Grade is A-F.
+\TechnicalTable{}{
+  \textit{Is the thesis technically sound? How well did the student employ expertise in his/her field of study? Does the student explain clearly what he/she has done? Grade is A-F.}
+}
+\vspace{0.5cm}
+
+% Are formalisms and notations used properly? Is the thesis organized in a logical way? Is the thesis sufficiently extensive? Is the thesis well-presented? Is the language clear and understandable? Is the English satisfactory? Grade is A-F
+\FormalTable{}{
+  \textit{Are formalisms and notations used properly? Is the thesis organized in a logical way? Is the thesis sufficiently extensive? Is the thesis well-presented? Is the language clear and understandable? Is the English satisfactory? Grade is A-F.}
+}
+\vspace{0.5cm}
+
+% Does the thesis make adequate reference to earlier work on the topic? Was the selection of sources adequate? Is the student’s original work clearly distinguished from earlier work in the field? Do the bibliographic citations meet the standards? Grade is A-F
+\SourcesTable{}{
+  \textit{Does the thesis make adequate reference to earlier work on the topic? Was the selection of sources adequate? Is the student’s original work clearly distinguished from earlier work in the field? Do the bibliographic citations meet the standards? Grade is A-F.}
+}
+
+\vspace{0.5cm}
+
+% Comment on the overall quality of the thesis, its novelty and its impact on the field, its strengths and weaknesses, the utility of the solution that is presented, the theoretical/formal level, the student’s skillfulness, etc.
+\AdditionalCommentsTable{
+  \textit{Comment on the overall quality of the thesis, its novelty and its impact on the field, its strengths and weaknesses, the utility of the solution that is presented, the theoretical/formal level, the student’s skillfulness, etc.}
+}
+
+\end{center}
+ 
+% Evaluation Section
+\section{\protect\Overall} 
+% Summarize your opinion on the thesis and explain your final grading.
+\textit{Summarize your opinion on the thesis and explain your final grading.}
+\newline
+
+\noindent \GradeText \textbf{\generalgrade{}}
+
+\vspace{0.5cm}
+\noindent \textbf{\ReviewDate} \today 
+
+\vspace{0.5cm}
+\noindent \textbf{\ReviewSignature}
+\end{document}
