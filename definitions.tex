@@ -202,3 +202,10 @@
   \bottomrule
 \end{tabular}
 }
+
+\newcommand{\syncLanguage}{%
+    \IfStrEqCase{\reviewlanguage}{%
+        {EN}{\selectlanguage{english}}%
+        {CZ}{\selectlanguage{czech}}%
+    }%
+}
