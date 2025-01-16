@@ -20,7 +20,10 @@
     headheight=2.5cm
 }
 \input{definitions.tex}
+\setlength\parindent{0pt} % No indent at the beginning of paragraphs
+
 \begin{document}
+\emergencystretch 3em % Prevent overflowing at right margin
 
 \renewcommand{\reviewlanguage}{CZ} % EN or CZ
 \renewcommand{\reporttype}{SUP} % SUP or REV
@@ -102,11 +105,11 @@
 \textit{Summarize your opinion on the thesis and explain your final grading.}
 \newline
 
-\noindent \GradeText \textbf{\generalgrade{}}
+\GradeText \textbf{\generalgrade{}}
 
 \vspace{0.5cm}
-\noindent \textbf{\ReviewDate} \today 
+\textbf{\ReviewDate} \today 
 
 \vspace{0.5cm}
-\noindent \textbf{\ReviewSignature}
+\textbf{\ReviewSignature}
 \end{document}
